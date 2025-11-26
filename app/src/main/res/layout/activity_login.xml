@@ -17,7 +17,7 @@
             android:layout_width="120dp"
             android:layout_height="120dp"
             android:layout_marginTop="40dp"
-            android:src="@drawable/your_logo" />
+            android:src="" />
 
         <!-- App Name -->
         <TextView
@@ -100,7 +100,7 @@
             <ImageView
                 android:layout_width="24dp"
                 android:layout_height="24dp"
-                android:src="@drawable/ic_google" />
+                android:src="iki google le bro" />
 
             <TextView
                 android:layout_width="wrap_content"
