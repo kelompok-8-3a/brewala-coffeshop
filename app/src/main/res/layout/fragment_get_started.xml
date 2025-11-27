@@ -22,7 +22,7 @@
         android:layout_width="90dp"
         android:layout_height="90dp"
         android:layout_marginTop="-45dp"
-        android:src="@drawable/ic_coffee"
+        android:src="@drawable/logo_coffe"
         app:layout_constraintTop_toBottomOf="@id/headerBg"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
