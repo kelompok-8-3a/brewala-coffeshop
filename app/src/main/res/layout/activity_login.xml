@@ -17,7 +17,7 @@
             android:layout_width="120dp"
             android:layout_height="120dp"
             android:layout_marginTop="40dp"
-            android:src="" />
+            android:src="@drawable/logo_coffe" />
 
         <!-- App Name -->
         <TextView
@@ -100,7 +100,7 @@
             <ImageView
                 android:layout_width="24dp"
                 android:layout_height="24dp"
-                android:src="iki google le bro" />
+                android:src="@drawable/logo_google" />
 
             <TextView
                 android:layout_width="wrap_content"
