@@ -16,5 +16,16 @@ class MainActivity : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
+
+        if(PreferenceManager.isFirstOpen(this)){
+            supportFragmentManager.beginTransaction()
+                .replace(R.id.fragmentGetStarted, GetStarted())
+        }
+
+        else{
+            // langsung tampilkan halaman utama
+            supportFragmentManager.beginTransaction()
+                .replace(R.id.fragmentGetStarted, HomeFragment())
+        }
     }
 }
