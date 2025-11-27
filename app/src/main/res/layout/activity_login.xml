@@ -17,7 +17,7 @@
             android:layout_width="120dp"
             android:layout_height="120dp"
             android:layout_marginTop="40dp"
-            android:src="@drawable/logo_coffe" />
+            android:src="@drawable/icon_brand" />
 
         <!-- App Name -->
         <TextView

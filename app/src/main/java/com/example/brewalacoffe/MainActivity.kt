@@ -20,12 +20,14 @@ class MainActivity : AppCompatActivity() {
         if(PreferenceManager.isFirstOpen(this)){
             supportFragmentManager.beginTransaction()
                 .replace(R.id.fragmentGetStarted, GetStarted())
+                .commit()
         }
 
         else{
             // langsung tampilkan halaman utama
             supportFragmentManager.beginTransaction()
                 .replace(R.id.fragmentGetStarted, HomeFragment())
+                .commit()
         }
     }
 }
