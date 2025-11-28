@@ -1,11 +1,13 @@
-package com.example.brewalacoffe
+package com.example.brewalacoffe.login
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import androidx.fragment.app.Fragment
+import com.example.brewalacoffe.PreferenceManager
+import com.example.brewalacoffe.R
 
 class GetStarted : Fragment() {
     override fun onCreateView(
@@ -23,11 +25,6 @@ class GetStarted : Fragment() {
 
             // set app tidak membuka get started lagi
             PreferenceManager.setOpened(requireContext())
-
-            // lempar ke halaman utama
-            parentFragmentManager.beginTransaction()
-                .replace(R.id.fragmentGetStarted, HomeFragment())
-                .commit()
         }
     }
 }
