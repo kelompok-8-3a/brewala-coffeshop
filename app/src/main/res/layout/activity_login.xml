@@ -17,14 +17,14 @@
             android:layout_width="120dp"
             android:layout_height="120dp"
             android:layout_marginTop="40dp"
-            android:src="" />
+            android:src="@drawable/icon_brand" />
 
         <!-- App Name -->
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Brewala"
             android:layout_marginTop="16dp"
+            android:text="Brewala"
             android:textSize="26sp"
             android:textStyle="bold"
             android:textColor="#000000" />
@@ -33,82 +33,82 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="28dp"
             android:text="Username"
             android:textColor="#000000"
-            android:textSize="14sp"
-            android:layout_marginTop="28dp"/>
+            android:textSize="14sp" />
 
         <EditText
             android:id="@+id/etUsername"
             android:layout_width="match_parent"
             android:layout_height="48dp"
+            android:layout_marginTop="4dp"
             android:hint="Enter username"
             android:padding="12dp"
-            android:background="@android:drawable/edit_text"
-            android:layout_marginTop="4dp" />
+            android:background="@android:drawable/edit_text" />
 
         <!-- Password -->
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="18dp"
             android:text="Password"
             android:textColor="#000000"
-            android:textSize="14sp"
-            android:layout_marginTop="18dp"/>
+            android:textSize="14sp" />
 
         <EditText
             android:id="@+id/etPassword"
             android:layout_width="match_parent"
             android:layout_height="48dp"
+            android:layout_marginTop="4dp"
             android:hint="Enter password"
             android:inputType="textPassword"
             android:padding="12dp"
-            android:background="@android:drawable/edit_text"
-            android:layout_marginTop="4dp" />
+            android:background="@android:drawable/edit_text" />
 
         <!-- Forgot Password -->
         <TextView
             android:id="@+id/tvForgotPassword"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:layout_gravity="end"
             android:text="Forgot password"
             android:textColor="#C62828"
-            android:textSize="12sp"
-            android:layout_marginTop="6dp"
-            android:layout_gravity="end" />
+            android:textSize="12sp" />
 
         <!-- OR text -->
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
             android:text="Or"
             android:textAlignment="center"
-            android:textColor="#555555"
-            android:layout_marginTop="12dp" />
+            android:textColor="#555555" />
 
         <!-- Google Sign In Button -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="48dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="16dp"
             android:orientation="horizontal"
             android:gravity="center"
-            android:background="#D3D3D3"
-            android:layout_marginTop="10dp"
             android:padding="8dp"
-            android:layout_marginBottom="16dp">
+            android:background="#D3D3D3">
 
             <ImageView
                 android:layout_width="24dp"
                 android:layout_height="24dp"
-                android:src="iki google le bro" />
+                android:src="@drawable/logo_google" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
                 android:text="Sign In with Google"
                 android:textSize="14sp"
-                android:textColor="#000000"
-                android:layout_marginLeft="10dp" />
+                android:textColor="#000000" />
         </LinearLayout>
 
         <!-- Login Button -->
@@ -116,24 +116,24 @@
             android:id="@+id/btnLogin"
             android:layout_width="match_parent"
             android:layout_height="48dp"
+            android:layout_marginTop="6dp"
             android:text="Login"
             android:background="#C99D2E"
             android:textColor="#FFFFFF"
-            android:textStyle="bold"
-            android:layout_marginTop="6dp" />
+            android:textStyle="bold" />
 
         <!-- Register Link -->
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginTop="14dp">
+            android:layout_marginTop="14dp"
+            android:orientation="horizontal">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="don't have account?"
-                android:textColor="#555555"/>
+                android:textColor="#555555" />
 
             <TextView
                 android:id="@+id/tvRegister"
@@ -141,7 +141,7 @@
                 android:layout_height="wrap_content"
                 android:text=" Register"
                 android:textColor="#C62828"
-                android:textStyle="bold"/>
+                android:textStyle="bold" />
         </LinearLayout>
 
     </LinearLayout>

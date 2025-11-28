@@ -18,5 +18,18 @@ class MainActivity : AppCompatActivity() {
             val intent = Intent(this, LoginActivity::class.java)
             startActivity(intent)
         }
+
+        if(PreferenceManager.isFirstOpen(this)){
+            supportFragmentManager.beginTransaction()
+                .replace(R.id.fragmentGetStarted, GetStarted())
+                .commit()
+        }
+
+        else{
+            // langsung tampilkan halaman utama
+            supportFragmentManager.beginTransaction()
+                .replace(R.id.fragmentGetStarted, HomeFragment())
+                .commit()
+        }
     }
 }
