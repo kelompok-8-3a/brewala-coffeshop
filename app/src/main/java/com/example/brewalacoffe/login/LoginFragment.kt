@@ -6,7 +6,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.EditText
 import android.widget.TextView
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import com.example.brewalacoffe.MainActivity
 import com.example.brewalacoffe.R
@@ -30,6 +32,8 @@ class LoginFragment : Fragment() {
 
         val buttonToRegister = view.findViewById<TextView>(R.id.textViewRegister)
         val buttonLogin = view.findViewById<Button>(R.id.buttonLogin)
+        val username = view.findViewById<EditText>(R.id.etUsername)
+        val password = view.findViewById<EditText>(R.id.etPassword)
 
         buttonToRegister.setOnClickListener {
             (activity as LoginActivity)
@@ -43,8 +47,35 @@ class LoginFragment : Fragment() {
                 requireActivity(),
                 MainActivity::class.java
             )
-            startActivity(intentToHomeActivity)
-            requireActivity().finish()
+
+            val usernameString = username.text.toString()
+            val passwordString = password.text.toString()
+
+            if (usernameString.isEmpty() || passwordString.isEmpty()) {
+                Toast.
+                makeText(
+                    activity,
+                    "Isi username dan password",
+                    Toast.LENGTH_SHORT)
+                    .show()
+
+            } else if (usernameString == "admin" && passwordString == "12345") {
+                Toast.
+                makeText(
+                    activity,
+                    "Login berhasil",
+                    Toast.LENGTH_SHORT)
+                    .show()
+                startActivity(intentToHomeActivity)
+                requireActivity().finish()
+
+            } else {
+                Toast.makeText(
+                    activity,
+                    "Username atau password salah",
+                    Toast.LENGTH_SHORT)
+                    .show()
+            }
         }
     }
 
