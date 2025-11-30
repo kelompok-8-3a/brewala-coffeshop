@@ -1,35 +1,21 @@
 package com.example.brewalacoffe
 
-import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Button
-import kotlin.jvm.java
+import androidx.activity.enableEdgeToEdge
+import androidx.appcompat.app.AppCompatActivity
+import androidx.core.view.ViewCompat
+import androidx.core.view.WindowInsetsCompat
 
 class MainActivity : AppCompatActivity() {
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        enableEdgeToEdge()
         setContentView(R.layout.activity_main)
-
-        val btnGetStarted = findViewById<Button>(R.id.btnGetStarted)
-
-        btnGetStarted.setOnClickListener {
-            val intent = Intent(this, LoginActivity::class.java)
-            startActivity(intent)
+        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.mainActivity)) { v, insets ->
+            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
+            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
+            insets
         }
 
-        if(PreferenceManager.isFirstOpen(this)){
-            supportFragmentManager.beginTransaction()
-                .replace(R.id.fragmentGetStarted, GetStarted())
-                .commit()
-        }
-
-        else{
-            // langsung tampilkan halaman utama
-            supportFragmentManager.beginTransaction()
-                .replace(R.id.fragmentGetStarted, HomeFragment())
-                .commit()
-        }
     }
 }
