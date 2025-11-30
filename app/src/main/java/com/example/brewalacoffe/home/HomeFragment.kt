@@ -1,11 +1,11 @@
-package com.example.brewalacoffe
+package com.example.brewalacoffe.home
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.recyclerview.widget.RecyclerView
+import androidx.fragment.app.Fragment
+import com.example.brewalacoffe.R
 
 class HomeFragment : Fragment() {
 

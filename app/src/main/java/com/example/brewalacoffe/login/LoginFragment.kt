@@ -10,7 +10,7 @@ import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
 import androidx.fragment.app.Fragment
-import com.example.brewalacoffe.MainActivity
+import com.example.brewalacoffe.home.MainActivity
 import com.example.brewalacoffe.R
 
 class LoginFragment : Fragment() {
