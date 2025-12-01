@@ -14,6 +14,12 @@ class DetailProdukFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.fragment_detail_produk, container, false)
+
+        // hubungkan fragment ke fragment_detail_produk.xml
+        return inflater.inflate(
+            R.layout.fragment_detail_produk,
+            container,
+            false
+        )
     }
 }
