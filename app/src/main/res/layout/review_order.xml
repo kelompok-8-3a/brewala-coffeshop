@@ -1,6 +1,303 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="#FFFFFF">
+
+    <!-- Back Button -->
+    <ImageButton
+        android:id="@+id/btnBack"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:background="@android:color/transparent"
+        android:src="@drawable/ic_chevron_left"
+        app:tint="#000000"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- Title -->
+    <TextView
+        android:id="@+id/txtReviewOrder"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Review Order"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        android:textColor="#000000"
+        android:layout_marginTop="28dp"
+        app:layout_constraintTop_toBottomOf="@id/btnBack"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- CARD PRODUCT -->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardCoffee"
+        android:layout_width="0dp"
+        android:layout_height="120dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginTop="120dp"
+        app:cardCornerRadius="16dp"
+        app:cardElevation="4dp"
+        app:cardBackgroundColor="#E7B12B"
+        app:layout_constraintTop_toBottomOf="@id/txtReviewOrder"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <!-- Image -->
+            <ImageView
+                android:id="@+id/imgCoffee"
+                android:layout_width="115dp"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"
+                android:src="@drawable/coffelate"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent" />
+
+            <!-- Title -->
+            <TextView
+                android:id="@+id/txtTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Cappuccino"
+                android:textSize="17sp"
+                android:textStyle="bold"
+                android:textColor="#000000"
+                app:layout_constraintStart_toEndOf="@id/imgCoffee"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="10dp"/>
+
+            <!-- Subtitle -->
+            <TextView
+                android:id="@+id/txtSubtitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="With Oat Milk"
+                android:textSize="14sp"
+                android:textColor="#333333"
+                app:layout_constraintStart_toStartOf="@id/txtTitle"
+                app:layout_constraintTop_toBottomOf="@id/txtTitle"
+                android:layout_marginTop="2dp"/>
+
+            <!-- Rating Star -->
+            <ImageView
+                android:id="@+id/iconStar"
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:src="@drawable/ic_star"
+                android:tint="#000000"
+                app:layout_constraintStart_toStartOf="@id/txtSubtitle"
+                app:layout_constraintTop_toBottomOf="@id/txtSubtitle"
+                android:layout_marginTop="6dp" />
+
+            <!-- Rating Number -->
+            <TextView
+                android:id="@+id/txtRating"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="4.5"
+                android:textSize="14sp"
+                app:layout_constraintStart_toEndOf="@id/iconStar"
+                android:layout_marginStart="6dp"
+                app:layout_constraintTop_toTopOf="@id/iconStar"/>
+
+            <!-- Price -->
+            <TextView
+                android:id="@+id/txtPrice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="$3.80"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginEnd="16dp"
+                app:layout_constraintTop_toTopOf="@id/txtRating" />
+
+            <!-- Size Label -->
+            <TextView
+                android:id="@+id/txtSize"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Size:"
+                android:textSize="14sp"
+                app:layout_constraintStart_toStartOf="@id/txtRating"
+                app:layout_constraintTop_toBottomOf="@id/txtRating"
+                android:layout_marginTop="10dp"/>
+
+            <!-- Size Value -->
+            <TextView
+                android:id="@+id/txtSizeValue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="S"
+                android:textStyle="bold"
+                android:textSize="14sp"
+                app:layout_constraintStart_toEndOf="@id/txtSize"
+                android:layout_marginStart="4dp"
+                app:layout_constraintTop_toTopOf="@id/txtSize"/>
+
+            <!-- Minus Button -->
+            <ImageButton
+                android:id="@+id/btnMinus"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:background="@drawable/bg_circle_brown"
+                android:src="@drawable/ic_minus"
+                app:tint="#FFFFFF"
+                app:layout_constraintTop_toTopOf="@id/txtSize"
+                app:layout_constraintEnd_toStartOf="@id/txtCount"
+                android:layout_marginEnd="10dp"/>
+
+            <!-- Counter -->
+            <TextView
+                android:id="@+id/txtCount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="2"
+                android:textSize="17sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toStartOf="@id/btnPlus"
+                app:layout_constraintTop_toTopOf="@id/btnMinus"
+                android:layout_marginEnd="10dp"/>
+
+            <!-- Plus Button -->
+            <ImageButton
+                android:id="@+id/btnPlus"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:layout_marginEnd="16dp"
+                android:background="@drawable/bg_circle_brown"
+                android:src="@drawable/ic_add"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/btnMinus"
+                app:tint="#FFFFFF" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+
+
+    <!-- TOTAL + SHIPPING SECTION -->
+    <LinearLayout
+        android:id="@+id/priceSection"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="20dp"
+        app:layout_constraintTop_toBottomOf="@id/cardCoffee"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <!-- Total -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_marginTop="80dp"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Total :"
+                android:textSize="16sp"
+                android:textColor="#000000"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/txtTotalPrice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="$7.60"
+                android:textSize="16sp"
+                android:textColor="#000000"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+
+        <!-- Shipping -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Shipping Charges :"
+                android:textSize="15sp"
+                android:textColor="#000000"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/txtShipping"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="$0.00"
+                android:textSize="15sp"
+                android:textColor="#000000"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+    <!-- BOTTOM BAR -->
+    <LinearLayout
+        android:id="@+id/bottomBar"
+        android:layout_width="0dp"
+        android:layout_height="75dp"
+        android:background="@drawable/bg_bottom_bar"
+        android:padding="15dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <!-- Total text -->
+        <TextView
+            android:id="@+id/bottomTotal"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Total\n$7.60"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:textColor="#000000" />
+
+        <!-- Buy button -->
+        <LinearLayout
+            android:layout_width="120dp"
+            android:layout_height="40dp"
+            android:background="@drawable/btn_buy_outer"
+            android:gravity="center"
+            android:padding="2dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="Buy"
+                android:textColor="#FFFFFF"
+                android:textStyle="bold"
+                android:background="@drawable/btn_buy_inner"/>
+        </LinearLayout>
+
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
