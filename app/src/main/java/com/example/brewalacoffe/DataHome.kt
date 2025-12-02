@@ -1,10 +1,13 @@
 package com.example.brewalacoffe
 import android.media.Image
+import android.widget.ImageView
 
 data class Menu(
-    val typeName: String,
+    val imageMenu: Int,
     val nameMenu: String,
+    val describeMenu: String,
     val priceMenu: Int,
+    val categoryMenu: CategoryMenu,
 )
 
 data class CategoryPromo(
@@ -12,3 +15,12 @@ data class CategoryPromo(
     val describePromo: String,
     val imagePromo: Image,
 )
+
+enum class CategoryMenu {
+    CAPUCCINO,
+    LATTE,
+    AMERICANO,
+    EXPRESSO_BASED,
+    COLD_CAFFE,
+    FLAVORED
+}

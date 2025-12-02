@@ -26,7 +26,7 @@ class LoginActivity : AppCompatActivity() {
         if(PreferenceManager.isFirstOpen(this)){
             supportFragmentManager.beginTransaction()
                 .replace(
-                    R.id.fragmentGetStarted,
+                    R.id.frameContainer,
                     GetStarted())
                 .commit()
         } else {
