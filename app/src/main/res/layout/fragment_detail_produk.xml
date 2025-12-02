@@ -16,7 +16,7 @@
             android:layout_width="match_parent"
             android:layout_height="260dp"
             android:scaleType="centerCrop"
-            android:src="@drawable/nama_file_gambar"/>
+            android:src="@drawable/coffelate"/>
 
         <LinearLayout
             android:layout_width="match_parent"
