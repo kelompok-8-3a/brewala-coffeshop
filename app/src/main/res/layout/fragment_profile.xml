@@ -12,7 +12,7 @@
         android:id="@+id/btnBack"
         android:layout_width="24dp"
         android:layout_height="24dp"
-        android:src="@drawable/"
+        android:src="@drawable/ic_chevron_left"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -64,7 +64,7 @@
             android:id="@+id/iconOrder"
             android:layout_width="28dp"
             android:layout_height="28dp"
-            android:src="@drawable/"
+            android:src="@drawable/logo_order"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent" />
@@ -107,7 +107,7 @@
             android:id="@+id/iconPay"
             android:layout_width="28dp"
             android:layout_height="28dp"
-            android:src="@drawable/"
+            android:src="@drawable/logo_payment"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent" />
@@ -149,7 +149,7 @@
             android:id="@+id/iconAddress"
             android:layout_width="28dp"
             android:layout_height="28dp"
-            android:src="@drawable/"
+            android:src="@drawable/logo_address"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent" />
@@ -191,7 +191,7 @@
             android:id="@+id/iconSetting"
             android:layout_width="28dp"
             android:layout_height="28dp"
-            android:src="@drawable/ic_setting"
+            android:src="@drawable/logo_setting"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent" />
