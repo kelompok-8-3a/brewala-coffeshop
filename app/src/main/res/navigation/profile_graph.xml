@@ -2,20 +2,13 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/profile_graph.xml"
-    app:startDestination="@id/profileFragment2">
+    android:id="@+id/profile_graph"
+    app:startDestination="@id/profileFragment">
+
     <fragment
-        android:id="@+id/profileFragment2"
+        android:id="@+id/profileFragment"
         android:name="com.example.brewalacoffe.home.ProfileFragment"
-        android:label="fragment_profile"
-        tools:layout="@layout/fragment_profile" >
-        <action
-            android:id="@+id/action_profileFragment2_to_methodPayment"
-            app:destination="@id/methodPayment" />
-    </fragment>
-    <fragment
-        android:id="@+id/methodPayment"
-        android:name="com.example.brewalacoffe.home.MethodPayment"
-        android:label="fragment_method_payment"
-        tools:layout="@layout/fragment_method_payment" />
+        android:label="Profile"
+        tools:layout="@layout/fragment_profile" />
+
 </navigation>

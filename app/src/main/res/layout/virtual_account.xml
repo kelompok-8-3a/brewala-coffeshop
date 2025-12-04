@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:padding="24dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <!-- Back Button -->
+        <ImageView
+            android:id="@+id/btnBack"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/ic_chevron_left"
+            android:contentDescription="back" />
+
+        <!-- Title -->
+        <TextView
+            android:id="@+id/tvTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="BRI Virtual Account"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:layout_marginTop="20dp"
+            android:textColor="#5A3E2B" />
+
+        <!-- VA Card -->
+        <LinearLayout
+            android:layout_marginTop="24dp"
+            android:background="@drawable/rounded_button_yellow"
+            android:padding="20dp"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp">
+
+            <!-- Title -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="BRI Virtual Account"
+                android:textColor="#5A3D1E"
+                android:textStyle="bold"
+                android:textSize="16sp"
+                android:paddingStart="4dp" />
+
+            <!-- VA Number -->
+            <TextView
+                android:id="@+id/tvVA"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="1234 5678 9101 2233"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="#1A1A1A"
+                android:layout_marginTop="6dp"
+                android:paddingStart="4dp" />
+
+            <!-- Store Name -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Bela Kopi Store"
+                android:textColor="#5A3D1E"
+                android:layout_marginTop="16dp"
+                android:textSize="18sp"
+                android:paddingStart="4dp" />
+
+            <!-- Copy Button aligned right -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="end"
+                android:layout_marginTop="12dp">
+
+                <Button
+                    android:id="@+id/btnCopy"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Copy"
+                    android:backgroundTint="#8B4A1E"
+                    android:textColor="#FFFFFF"
+                    android:textSize="12sp"
+                    android:paddingLeft="20dp"
+                    android:paddingRight="20dp" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:orientation="horizontal">
+
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Total"
+                android:textStyle="bold"
+                android:textSize="16sp"
+                android:textColor="#1A1A1A" />
+
+            <TextView
+                android:id="@+id/tvTotal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Rp. 20.000"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:textColor="#1A1A1A" />
+
+        </LinearLayout>
+
+
+        <!-- Instructions -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Instruksi Pembayaran"
+            android:textStyle="bold"
+            android:layout_marginTop="30dp"
+            android:textColor="#1A1A1A"
+            android:textSize="16sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="1. Buka Brimo\n2. Pilih Pembayaran VA\n3. Masukkan nomer VA"
+            android:textColor="#444444"
+            android:layout_marginStart="15dp"
+            android:textSize="20sp" />
+
+        <!-- PAYMENT BUTTON -->
+        <Button
+            android:id="@+id/btnSudahBayar"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:text="Saya Sudah Bayar"
+            android:backgroundTint="#E8B643"
+            android:textSize="24sp"
+            android:textColor="#1A1A1A"
+            android:textStyle="bold"
+            android:layout_marginTop="50dp"
+            android:layout_marginBottom="20dp"
+            android:gravity="center" />
+
+    </LinearLayout>
+
+</ScrollView>
