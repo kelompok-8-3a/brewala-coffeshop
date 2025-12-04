@@ -23,7 +23,7 @@ class DetailProductActivity : AppCompatActivity() {
 
         val textViewNameMenu = findViewById<TextView>(R.id.txtNamaProduk)
         val textViewPrice = findViewById<TextView>(R.id.txtHarga)
-        val ImageViewProduct = findViewById<ImageView>(R.id.imageProduct)
+        val imageViewProduct = findViewById<ImageView>(R.id.imageProduct)
         val textViewDeskripsi = findViewById<TextView>(R.id.txtDeskripsi)
 
         val getInformationMenu = {
@@ -33,6 +33,8 @@ class DetailProductActivity : AppCompatActivity() {
         textViewNameMenu.text = getInformationMenu(HomeFragment.NAME_PRODUCT)
         textViewPrice.text = getInformationMenu(HomeFragment.PRICE_PRODUCT)
         textViewDeskripsi.text = getInformationMenu(HomeFragment.DESCRIBE_PRODUCT)
-        val imageproduct: Int= getIntent().getIntExtra(HomeFragment.IMAGE_PRODUCT, 0)
+        val imageProduct = getIntent().getIntExtra(HomeFragment.IMAGE_PRODUCT, 0)
+
+        imageViewProduct.setImageResource(imageProduct)
     }
 }
