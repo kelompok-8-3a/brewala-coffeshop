@@ -1,14 +1,12 @@
 package com.example.brewalacoffe.login
 
-import android.content.Context
+import android.content.Intent
 import android.os.Bundle
-import android.widget.FrameLayout
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.fragment.app.Fragment
-import com.example.brewalacoffe.login.GetStarted
 import com.example.brewalacoffe.PreferenceManager
 import com.example.brewalacoffe.R
 
@@ -24,11 +22,10 @@ class LoginActivity : AppCompatActivity() {
         }
 
         if(PreferenceManager.isFirstOpen(this)){
-            supportFragmentManager.beginTransaction()
-                .replace(
-                    R.id.frameContainer,
-                    GetStarted())
-                .commit()
+            startActivity(Intent(
+                this,
+                GetStartedActivity::class.java))
+            finish()
         } else {
             supportFragmentManager.beginTransaction()
                 .replace(

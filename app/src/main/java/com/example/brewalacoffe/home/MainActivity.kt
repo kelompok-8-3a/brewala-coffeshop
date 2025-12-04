@@ -12,6 +12,8 @@ import com.example.brewalacoffe.Menu
 import com.example.brewalacoffe.R
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
+
+
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -29,5 +31,4 @@ class MainActivity : AppCompatActivity() {
         bottomNavigationView.setupWithNavController(navController)
 
     }
-
 }

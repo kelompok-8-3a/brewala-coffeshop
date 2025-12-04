@@ -9,6 +9,7 @@
     android:padding="16dp"
     android:gravity="top|center_horizontal"
     android:background="@android:color/white"
+    tools:context=".home.MethodPayment"
     >
 
     <!-- ======================= BACK BUTTON ======================= -->

@@ -51,15 +51,15 @@ class LoginFragment : Fragment() {
             val usernameString = username.text.toString()
             val passwordString = password.text.toString()
 
-            if (usernameString.isEmpty() || passwordString.isEmpty()) {
-                Toast.
-                makeText(
-                    activity,
-                    "Isi username dan password",
-                    Toast.LENGTH_SHORT)
-                    .show()
+//            if (usernameString.isEmpty() || passwordString.isEmpty()) {
+//                Toast.
+//                makeText(
+//                    activity,
+//                    "Isi username dan password",
+//                    Toast.LENGTH_SHORT)
+//                    .show()
 
-            } else if (usernameString == "admin" && passwordString == "12345") {
+            if (usernameString == "" && passwordString == "") {
                 Toast.
                 makeText(
                     activity,

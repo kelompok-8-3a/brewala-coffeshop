@@ -11,6 +11,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.BrewalaCoffe">
+        <activity android:name=".login.GetStartedActivity"/>
+        <activity
+            android:name=".home.DetailProductActivity"
+            android:exported="false" />
         <activity
             android:name=".login.LoginActivity"
             android:exported="true">
@@ -22,8 +26,7 @@
         </activity>
         <activity
             android:name=".home.MainActivity"
-            android:exported="false">
-        </activity>
+            android:exported="false"></activity>
     </application>
 
 </manifest>

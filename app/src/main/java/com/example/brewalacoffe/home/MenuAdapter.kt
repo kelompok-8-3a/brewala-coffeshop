@@ -38,7 +38,7 @@ class MenuAdapter(
         }
 
         holder.textViewNameMenu.text = menu.nameMenu
-        holder.textViewPriceMenu.text = menu.priceMenu.toString()
+        holder.textViewPriceMenu.text = "Rp. " + menu.priceMenu.toString()
         holder.imageViewMenu.setImageResource(menu.imageMenu)
     }
 
