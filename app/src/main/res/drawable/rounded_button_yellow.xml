@@ -2,7 +2,7 @@
 <shape xmlns:android="http://schemas.android.com/apk/res/android"
     android:shape="rectangle">
 
-    <solid android:color="#ECB22E"/> <!-- warna kuning -->
+    <solid android:color="#E6AF2E"/> <!-- warna kuning -->
 
     <corners android:radius="16dp"/> <!-- bikin lengkung -->
 

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_order"
+    app:startDestination="@id/reviewOrderFragment">
+
+    <!-- Review Order -->
+    <fragment
+        android:id="@+id/reviewOrderFragment"
+        android:name="com.example.brewalacoffe.home.ReviewOrderFragment"
+        android:label="Review Order"
+        tools:layout="@layout/fragment_review_order">
+
+        <action
+            android:id="@+id/action_reviewOrder_to_methodPayment"
+            app:destination="@id/methodPaymentFragment" />
+    </fragment>
+
+    <!-- Payment Method -->
+    <fragment
+        android:id="@+id/methodPaymentFragment"
+        android:name="com.example.brewalacoffe.home.MethodPaymentFragment"
+        android:label="Payment Method"
+        tools:layout="@layout/fragment_method_payment">
+
+        <action
+            android:id="@+id/action_methodPayment_to_virtualAccount"
+            app:destination="@id/virtualAccountFragment" />
+
+        <action
+            android:id="@+id/action_methodPayment_to_qris"
+            app:destination="@id/qrisPaymentFragment" />
+    </fragment>
+
+    <!-- Virtual Account -->
+    <fragment
+        android:id="@+id/virtualAccountFragment"
+        android:name="com.example.brewalacoffe.home.VirtualAccountFragment"
+        android:label="Virtual Account"
+        tools:layout="@layout/fragment_virtual_account">
+
+        <action
+            android:id="@+id/action_va_to_review"
+            app:destination="@id/reviewOrderFragment" />
+    </fragment>
+
+    <!-- QRIS Payment -->
+    <fragment
+        android:id="@+id/qrisPaymentFragment"
+        android:name="com.example.brewalacoffe.home.QrisPaymentFragment"
+        android:label="QRIS Payment"
+        tools:layout="@layout/fragment_qris_payment" />
+
+</navigation>

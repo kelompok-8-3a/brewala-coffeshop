@@ -8,16 +8,23 @@
     <fragment
         android:id="@+id/homeFragment"
         android:name="com.example.brewalacoffe.home.HomeFragment"
-        android:label="fragment_home"
-        tools:layout="@layout/fragment_home" />
+        android:label="Home"
+        tools:layout="@layout/fragment_home">
+
+        <action
+            android:id="@+id/action_home_to_detailProduk"
+            app:destination="@id/detailProdukFragment" />
+    </fragment>
+
     <fragment
-        android:id="@+id/profileFragment"
-        android:name="com.example.brewalacoffe.home.ProfileFragment"
-        android:label="fragment_profile"
-        tools:layout="@layout/fragment_profile" />
-    <fragment
-        android:id="@+id/orderList"
-        android:name="com.example.brewalacoffe.home.OrderList"
-        android:label="fragment_order_list"
-        tools:layout="@layout/fragment_order_list" />
+        android:id="@+id/detailProdukFragment"
+        android:name="com.example.brewalacoffe.home.DetailProdukFragment"
+        android:label="Detail Produk"
+        tools:layout="@layout/fragment_detail_produk">
+
+        <action
+            android:id="@+id/action_detailProduk_to_orderGraph"
+            app:destination="@id/nav_order" />
+    </fragment>
+
 </navigation>
