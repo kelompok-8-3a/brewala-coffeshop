@@ -33,11 +33,6 @@ class ProfileFragment : Fragment() {
         val btnSetting = view.findViewById<View>(R.id.btnSetting)
         val btnLogout = view.findViewById<TextView>(R.id.btnLogout)
 
-        // Aksi klik tombol
-        btnBack.setOnClickListener {
-            requireActivity().onBackPressedDispatcher.onBackPressed()
-        }
-
         btnMyOrders.setOnClickListener {
             Toast.makeText(requireContext(), "My Orders diklik", Toast.LENGTH_SHORT).show()
             // findNavController().navigate(R.id.action_profile_to_orders) → setelah nav_graph siap

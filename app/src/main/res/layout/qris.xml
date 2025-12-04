@@ -1,33 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="20dp">
+    android:orientation="vertical">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
         android:orientation="vertical"
-        android:gravity="center_horizontal">
+        android:padding="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <!-- Title -->
         <TextView
             android:id="@+id/tvQrisTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
             android:text="QRIS Payment"
-            android:textSize="22sp"
-            android:textStyle="bold"
             android:textColor="#5A3D1E"
-            android:layout_marginTop="10dp" />
+            android:textSize="22sp"
+            android:textStyle="bold" />
 
         <!-- QR Image -->
         <ImageView
             android:id="@+id/ivQris"
             android:layout_width="220dp"
             android:layout_height="220dp"
-            android:layout_marginTop="16dp"
-            android:src="@drawable/ic_qr" />
+            android:layout_marginTop="16dp" />
 
         <!-- Scan menggunakan -->
         <TextView
@@ -35,32 +40,32 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             android:text="Scan menggunakan :"
-            android:textSize="14sp"
-            android:textColor="#1A1A1A" />
+            android:textColor="#1A1A1A"
+            android:textSize="14sp" />
 
         <!-- Payment options -->
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_marginTop="10dp">
+            android:layout_marginTop="10dp"
+            android:orientation="vertical">
 
             <!-- Dana -->
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
+                android:layout_marginBottom="6dp"
                 android:gravity="center_vertical"
-                android:layout_marginBottom="6dp">
+                android:orientation="horizontal">
 
                 <View
                     android:layout_width="10dp"
                     android:layout_height="10dp"
-                    android:background="#5A3D1E"
-                    android:layout_marginRight="8dp"
-                    android:layout_marginTop="3dp"
-                    android:layout_marginLeft="4dp"
                     android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="4dp"
+                    android:layout_marginTop="3dp"
+                    android:layout_marginRight="8dp"
+                    android:background="#5A3D1E"
                     android:shape="oval" />
 
                 <TextView
@@ -74,17 +79,17 @@
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
+                android:layout_marginBottom="6dp"
                 android:gravity="center_vertical"
-                android:layout_marginBottom="6dp">
+                android:orientation="horizontal">
 
                 <View
                     android:layout_width="10dp"
                     android:layout_height="10dp"
-                    android:background="#5A3D1E"
-                    android:layout_marginRight="8dp"
+                    android:layout_gravity="center_vertical"
                     android:layout_marginLeft="4dp"
-                    android:layout_gravity="center_vertical" />
+                    android:layout_marginRight="8dp"
+                    android:background="#5A3D1E" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -97,16 +102,16 @@
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
+                android:layout_marginBottom="6dp"
                 android:gravity="center_vertical"
-                android:layout_marginBottom="6dp">
+                android:orientation="horizontal">
 
                 <View
                     android:layout_width="10dp"
                     android:layout_height="10dp"
-                    android:background="#5A3D1E"
+                    android:layout_marginLeft="4dp"
                     android:layout_marginRight="8dp"
-                    android:layout_marginLeft="4dp" />
+                    android:background="#5A3D1E" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -119,16 +124,16 @@
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
+                android:layout_marginBottom="6dp"
                 android:gravity="center_vertical"
-                android:layout_marginBottom="6dp">
+                android:orientation="horizontal">
 
                 <View
                     android:layout_width="10dp"
                     android:layout_height="10dp"
-                    android:background="#5A3D1E"
+                    android:layout_marginLeft="4dp"
                     android:layout_marginRight="8dp"
-                    android:layout_marginLeft="4dp" />
+                    android:background="#5A3D1E" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -141,15 +146,15 @@
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:gravity="center_vertical">
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
 
                 <View
                     android:layout_width="10dp"
                     android:layout_height="10dp"
-                    android:background="#5A3D1E"
+                    android:layout_marginLeft="4dp"
                     android:layout_marginRight="8dp"
-                    android:layout_marginLeft="4dp" />
+                    android:background="#5A3D1E" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -161,32 +166,41 @@
         </LinearLayout>
 
         <!-- Total -->
-        <LinearLayout
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:gravity="space-between"
-            android:layout_marginTop="30dp">
+            android:layout_marginTop="30dp"
+            android:paddingHorizontal="10dp"
+            android:orientation="horizontal">
 
             <TextView
+                android:id="@+id/textView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Total"
-                android:textSize="16sp"
                 android:textColor="#000000"
-                android:textStyle="bold" />
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toStartOf="@+id/tvTotal"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintHorizontal_chainStyle="spread_inside"
+                app:layout_constraintStart_toStartOf="parent" />
 
             <TextView
                 android:id="@+id/tvTotal"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="$7.60"
-                android:textSize="16sp"
                 android:textColor="#000000"
-                android:textStyle="bold" />
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/textView"
+                tools:layout_editor_absoluteY="0dp" />
 
-        </LinearLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
     </LinearLayout>
 
-</ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

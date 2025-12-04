@@ -1,5 +1,6 @@
 package com.example.brewalacoffe.home
 
+
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -20,11 +21,10 @@ class DetailProdukFragment : Fragment() {
     ): View? {
 
         // hubungkan fragment ke fragment_detail_produk.xml
-        val view = inflater.inflate(R.layout.fragment_detail_produk, container, false)
+        val view = inflater.inflate(R.layout.fragment_review_order, container, false)
 
 
         // AMBIL KOMPONEN DARI XML
-
         val imageProduct = view.findViewById<ImageView>(R.id.imageProduct)
         val txtNamaProduk = view.findViewById<TextView>(R.id.txtNamaProduk)
         val txtSubjudul = view.findViewById<TextView>(R.id.txtSubjudul)
@@ -73,10 +73,10 @@ class DetailProdukFragment : Fragment() {
 
         // EVENT BUTTON
 
-        btnBuyNow.setOnClickListener {
-            // pindah ke halaman Review Order
-            findNavController().navigate(R.id.action_detailProduk_to_reviewOrder)
-        }
+//        btnBuyNow.setOnClickListener {
+//            // pindah ke halaman Review Order
+//            findNavController().navigate(R.id.action_detailProduk_to_reviewOrder)
+//        }
 
         btnAddToCart.setOnClickListener {
             // logika tambah cart
