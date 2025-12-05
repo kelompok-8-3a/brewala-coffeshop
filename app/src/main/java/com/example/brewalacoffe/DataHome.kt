@@ -10,10 +10,15 @@ data class Menu(
     val categoryMenu: CategoryMenu,
 )
 
-data class CategoryPromo(
-    val typePromo: String,
+enum class TypePromo {
+    NEW_MEMBER,
+    DISCOUNT
+}
+
+data class Promo(
+    val typePromo: TypePromo,
     val describePromo: String,
-    val imagePromo: Image,
+    val imagePromo: Int,
 )
 
 enum class CategoryMenu {

@@ -1,39 +1,53 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="280dp"
     android:layout_height="110dp"
     android:orientation="vertical"
-    android:background="@drawable/banner_discount"
+    android:id="@+id/itemPromo"
     >
 
     <LinearLayout
+        android:id="@+id/LinearLayoutDiscountInfo"
         android:layout_width="100dp"
         android:layout_height="110dp"
-        android:id="@+id/LinearLayoutDiscountInfo"
         android:background="@color/background_discount"
+        android:gravity="center"
         android:orientation="vertical"
-        android:gravity="center">
-        
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="@color/text_main"
-            android:background="@color/white"
-            android:padding="2dp"
-            android:id="@+id/TextViewCategoryDiscount"
-            android:text="New Member"
-            android:textSize="5sp"
-            />
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:elevation="8dp"
+        app:layout_constraintStart_toStartOf="parent">
 
         <TextView
+            android:id="@+id/TextViewCategoryDiscount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:padding="2dp"
+            android:text="New Member"
+            android:textColor="@color/text_main"
+            android:textSize="5sp" />
+
+        <TextView
+            android:id="@+id/TextVeiwDescribeDiscount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingStart="8dp"
             android:text="Discount 10% untuk morning person"
             android:textColor="@android:color/white"
             android:textSize="16sp"
-            android:textStyle="bold"
-            android:paddingStart="8dp"
-            android:layout_height="wrap_content"
-            android:layout_width="wrap_content"/>
+            android:textStyle="bold" />
 
     </LinearLayout>
 
-</LinearLayout>
+    <ImageView
+        android:id="@+id/ImageViewDiscount"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/banner_discount" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

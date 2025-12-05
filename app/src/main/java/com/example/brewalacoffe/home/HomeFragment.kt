@@ -10,7 +10,9 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.brewalacoffe.CategoryMenu
 import com.example.brewalacoffe.Menu
+import com.example.brewalacoffe.Promo
 import com.example.brewalacoffe.R
+import com.example.brewalacoffe.TypePromo
 
 class HomeFragment : Fragment() {
 
@@ -28,12 +30,22 @@ class HomeFragment : Fragment() {
         val recylerviewProduct = view.findViewById<RecyclerView>(R.id.recyclerviewListMenu)
         recylerviewProduct.layoutManager = LinearLayoutManager(requireActivity())
 
-        val listMenu:List<Menu> = getData()
+        val recylerViewPromo = view.findViewById<RecyclerView>(R.id.recyclerPromo)
+        recylerViewPromo.layoutManager = LinearLayoutManager(
+            requireActivity(),
+            LinearLayoutManager.HORIZONTAL,
+            false)
+
+        val listPromo:List<Promo> = getDataListPromo()
+
+        val listMenu:List<Menu> = getDataListMenu()
 
         recylerviewProduct.adapter = MenuAdapter(
             listMenu,
             ::goToProduct
         )
+
+        recylerViewPromo.adapter = PromoAdapter(listPromo)
 
     }
 
@@ -43,8 +55,6 @@ class HomeFragment : Fragment() {
             DetailProductActivity::class.java,
         )
 
-
-//        detailProductIntent.putExtra("menu", List<Menu>(menu))
         detailProductIntent.putExtra(IMAGE_PRODUCT, menu.imageMenu)
         detailProductIntent.putExtra(PRICE_PRODUCT, menu.priceMenu)
         detailProductIntent.putExtra(NAME_PRODUCT, menu.nameMenu)
@@ -56,7 +66,7 @@ class HomeFragment : Fragment() {
 
     }
 
-    fun getData(): List<Menu>{
+    fun getDataListMenu(): List<Menu>{
         val listMenu = mutableListOf<Menu>()
 
         listMenu.add(Menu(
@@ -87,6 +97,30 @@ class HomeFragment : Fragment() {
             CategoryMenu.FLAVORED))
 
         return listMenu
+    }
+
+    fun getDataListPromo(): List<Promo> {
+        val listPromo = mutableListOf<Promo>()
+
+        listPromo.add(Promo(
+            TypePromo.NEW_MEMBER,
+            "Discount 10% untuk morning person",
+            R.drawable.banner_discount
+        ))
+
+        listPromo.add(Promo(
+            TypePromo.DISCOUNT,
+            "Discount beli 1 gratis 1 untuk morning person",
+            R.drawable.banner_discount
+        ))
+
+        listPromo.add(Promo(
+            TypePromo.NEW_MEMBER,
+            "Discount 10% untuk morning person",
+            R.drawable.banner_discount
+        ))
+
+        return listPromo
     }
 
     companion object {
