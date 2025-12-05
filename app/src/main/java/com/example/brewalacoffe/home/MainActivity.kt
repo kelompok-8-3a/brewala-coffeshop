@@ -7,7 +7,6 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.navigation.findNavController
 import androidx.navigation.ui.setupWithNavController
-import com.example.brewalacoffe.CategoryMenu
 import com.example.brewalacoffe.Menu
 import com.example.brewalacoffe.R
 import com.google.android.material.bottomnavigation.BottomNavigationView

@@ -1,6 +1,7 @@
 package com.example.brewalacoffe
 import android.media.Image
 import android.widget.ImageView
+import com.example.brewalacoffe.home.CategoryMenu
 
 data class Menu(
     val imageMenu: Int,
@@ -21,11 +22,3 @@ data class Promo(
     val imagePromo: Int,
 )
 
-enum class CategoryMenu {
-    CAPUCCINO,
-    LATTE,
-    AMERICANO,
-    EXPRESSO_BASED,
-    COLD_CAFFE,
-    FLAVORED
-}

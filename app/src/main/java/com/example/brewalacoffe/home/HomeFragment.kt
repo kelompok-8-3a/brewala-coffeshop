@@ -8,13 +8,14 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.brewalacoffe.CategoryMenu
 import com.example.brewalacoffe.Menu
 import com.example.brewalacoffe.Promo
 import com.example.brewalacoffe.R
 import com.example.brewalacoffe.TypePromo
 
 class HomeFragment : Fragment() {
+
+    private lateinit var getDataRecyclerView: GetDataRecyclerView
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -27,6 +28,8 @@ class HomeFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        getDataRecyclerView = GetDataRecyclerView()
+
         val recylerviewProduct = view.findViewById<RecyclerView>(R.id.recyclerviewListMenu)
         recylerviewProduct.layoutManager = LinearLayoutManager(requireActivity())
 
@@ -36,9 +39,16 @@ class HomeFragment : Fragment() {
             LinearLayoutManager.HORIZONTAL,
             false)
 
-        val listPromo:List<Promo> = getDataListPromo()
+        val recylerViewCategory = view.findViewById<RecyclerView>(R.id.recyclerViewCategoryMenu)
+        recylerViewCategory.layoutManager = LinearLayoutManager(
+            requireActivity(),
+            LinearLayoutManager.HORIZONTAL,
+            false
+        )
 
-        val listMenu:List<Menu> = getDataListMenu()
+        val listPromo:List<Promo> = getDataRecyclerView.getDataListPromo()
+        val listMenu:List<Menu> = getDataRecyclerView.getDataListMenu()
+        val listCategory:List<CategoryMenu> = getDataRecyclerView.get
 
         recylerviewProduct.adapter = MenuAdapter(
             listMenu,
@@ -46,7 +56,6 @@ class HomeFragment : Fragment() {
         )
 
         recylerViewPromo.adapter = PromoAdapter(listPromo)
-
     }
 
     fun goToProduct(menu:Menu): Unit{
@@ -66,63 +75,6 @@ class HomeFragment : Fragment() {
 
     }
 
-    fun getDataListMenu(): List<Menu>{
-        val listMenu = mutableListOf<Menu>()
-
-        listMenu.add(Menu(
-            R.drawable.item_menu_capuccino,
-            "Capuccino",
-            "Sajian kopi klasik yang menggabungkan espresso berkualitas tinggi dengan susu panas bertekstur lembut, dilengkapi lapisan foam halus sebagai penutup.",
-            20000,
-            CategoryMenu.EXPRESSO_BASED))
-
-        listMenu.add(Menu(
-            R.drawable.item_menu_caffe_latte,
-            "Caffe Latte",
-            "",
-            18000,
-            CategoryMenu.EXPRESSO_BASED))
-
-        listMenu.add(Menu(
-            R.drawable.item_menu_americano,
-            "Iced Americano",
-            "",
-            15000,
-            CategoryMenu.COLD_CAFFE))
-        listMenu.add(Menu(
-            R.drawable.item_menu_caramel_latte,
-            "Caramel Latte",
-            "",
-            22000,
-            CategoryMenu.FLAVORED))
-
-        return listMenu
-    }
-
-    fun getDataListPromo(): List<Promo> {
-        val listPromo = mutableListOf<Promo>()
-
-        listPromo.add(Promo(
-            TypePromo.NEW_MEMBER,
-            "Discount 10% untuk morning person",
-            R.drawable.banner_discount
-        ))
-
-        listPromo.add(Promo(
-            TypePromo.DISCOUNT,
-            "Discount beli 1 gratis 1 untuk morning person",
-            R.drawable.banner_discount
-        ))
-
-        listPromo.add(Promo(
-            TypePromo.NEW_MEMBER,
-            "Discount 10% untuk morning person",
-            R.drawable.banner_discount
-        ))
-
-        return listPromo
-    }
-
     companion object {
         const val NAME_PRODUCT = "name_product"
         const val PRICE_PRODUCT = "price_product"
@@ -130,5 +82,4 @@ class HomeFragment : Fragment() {
         const val CATEGORY_PRODUCT = "category_prodcut"
         const val  DESCRIBE_PRODUCT = "describe_product"
     }
-
 }
