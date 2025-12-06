@@ -5,10 +5,11 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.example.brewalacoffe.FilterCategoryMenu
 import com.example.brewalacoffe.R
-import com.example.brewalacoffe.home.MenuAdapter.MenuViewHolder
 
 enum class CategoryMenu {
+    ALL,
     CAPUCCINO,
     LATTE,
     AMERICANO,
@@ -23,8 +24,11 @@ data class Category(
 
 class CategoryAdapter(
     val listCategory: List<CategoryMenu>,
-    val onClickItemCategory: (CategoryMenu) -> Unit):
+    val onFilter: (CategoryMenu) -> Unit
+):
     RecyclerView.Adapter<CategoryAdapter.CategoryViewHolder>() {
+
+        private var selectedPosition = 0
 
     override fun onCreateViewHolder(
         parent: ViewGroup,
@@ -44,10 +48,24 @@ class CategoryAdapter(
         position: Int
     ) {
         val category: CategoryMenu = listCategory.get(position)
-        holder.textViewCategory.text = category.toString()
+        holder.textViewCategory.text = category.name.replace("_", " ")
+
+        if (position == selectedPosition) {
+            holder.row.setBackgroundResource(R.color.white)
+            holder.textViewCategory.setTextColor(holder.itemView.context.getColor(R.color.text_main))
+        } else {
+            holder.row.setBackgroundResource(R.color.text_main)
+            holder.textViewCategory.setTextColor(holder.itemView.context.getColor(R.color.white))
+        }
 
         holder.row.setOnClickListener {
-            onClickItemCategory(category)
+            if (selectedPosition != position) {
+                val previousSelectedPosition = selectedPosition
+                selectedPosition = position
+                notifyItemChanged(previousSelectedPosition)
+                notifyItemChanged(selectedPosition)
+                onFilter(category)
+            }
         }
     }
 

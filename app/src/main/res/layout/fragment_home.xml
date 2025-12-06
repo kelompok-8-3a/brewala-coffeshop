@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.core.widget.NestedScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -7,180 +8,170 @@
     tools:context=".home.HomeFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
-    android:id="@+id/constraintLayoutProfileAndLocation"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:paddingHorizontal="15dp"
-    android:paddingVertical="20dp"
-    app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintTop_toTopOf="parent">
-
-        <TextView
-            android:id="@+id/textView3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="28dp"
-            android:textSize="15sp"
-            android:text="Meja 4"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toEndOf="@+id/imageView"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <ImageView
-            android:id="@+id/imageView"
-            android:layout_width="70sp"
-            android:layout_height="70sp"
-            app:layout_constraintEnd_toStartOf="@+id/textView3"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintHorizontal_chainStyle="spread_inside"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:src="@tools:sample/avatars" />
-    </androidx.constraintlayout.widget.ConstraintLayout>
-
-    <LinearLayout
-        android:id="@+id/LinearLayoutSapaUser"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_constraintStart_toStartOf="parent"
-        android:orientation="vertical"
-        app:layout_constraintTop_toBottomOf="@+id/constraintLayoutProfileAndLocation"
-        >
+        android:layout_height="wrap_content">
 
-        <LinearLayout
-            android:id="@+id/LinearLayoutSapaUser2"
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintLayoutProfileAndLocation"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:paddingHorizontal="15dp"
+            android:paddingVertical="20dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
 
             <TextView
-                android:id="@+id/textViewSapa"
+                android:id="@+id/textView3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="28dp"
+                android:text="Meja 4"
+                android:textSize="15sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/imageView"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="70sp"
+                android:layout_height="70sp"
+                app:layout_constraintEnd_toStartOf="@+id/textView3"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintHorizontal_chainStyle="spread_inside"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:src="@tools:sample/avatars" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <LinearLayout
+            android:id="@+id/LinearLayoutSapaUser"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/constraintLayoutProfileAndLocation">
+
+            <LinearLayout
+                android:id="@+id/LinearLayoutSapaUser2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/textViewSapa"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:text="Hai, "
+                    android:textSize="20dp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+                <TextView
+                    android:id="@+id/textViewUsername"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Faris!"
+                    android:textColor="@color/text_main"
+                    android:textSize="20dp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/constraintLayoutProfileAndLocation" />
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/textView5"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
-                android:textSize="20dp"
-                android:text="Hai, "
+                android:text="Mau pesan apa hari ini?"
+                android:textSize="12sp"
                 android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="parent"
-                />
-
-            <TextView
-                android:id="@+id/textViewUsername"
-                android:layout_width="wrap_content"
-                android:textColor="@color/text_main"
-                android:textSize="20dp"
-                android:layout_height="wrap_content"
-                android:text="Faris!"
-                android:textStyle="bold"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/constraintLayoutProfileAndLocation" />
+                app:layout_constraintTop_toBottomOf="@+id/LinearLayoutSapaUser2" />
 
         </LinearLayout>
 
-        <TextView
-            android:id="@+id/textView5"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:textStyle="bold"
-            android:textSize="12sp"
-            android:text="Mau pesan apa hari ini?"
+        <SearchView
+            android:id="@+id/searchView"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_marginHorizontal="30dp"
+            android:layout_marginVertical="20dp"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/LinearLayoutSapaUser2" />
-
-    </LinearLayout>
-
-    <SearchView
-        android:id="@+id/searchView"
-        android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:layout_marginHorizontal="30dp"
-        android:layout_marginVertical="20dp"
-        android:layout_marginTop="1dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/LinearLayoutSapaUser" />
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerViewCategoryMenu"
-        android:layout_width="407dp"
-        android:layout_height="47dp"
-        android:layout_marginTop="10dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/searchView" />
-
-
-    <androidx.constraintlayout.widget.Group
-        android:id="@+id/group"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/LinearLayoutPromo"
-        app:layout_constraintTop_toBottomOf="@+id/recyclerViewCategoryMenu"
-        android:orientation="vertical"
-        android:layout_marginVertical="10dp"
-        >
-
-        <TextView
-            android:id="@+id/textViewPromo"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:textStyle="bold"
-            android:textSize="20dp"
-            android:text="Promo"
-            app:layout_constraintStart_toStartOf="parent"
-            />
-
-        <TextView
-            android:id="@+id/textViewDeskripsiPromo"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:text="Ada Promo nih buat kamu"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textViewPromo" />
+            app:layout_constraintTop_toBottomOf="@+id/LinearLayoutSapaUser" />
 
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recyclerPromo"
+            android:id="@+id/recyclerViewCategoryMenu"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/searchView" />
+
+        <LinearLayout
+            android:id="@+id/LinearLayoutPromo"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="10dp"
-            app:layout_constraintTop_toBottomOf="@+id/LinearLayoutPromo"/>
+            android:layout_marginVertical="10dp"
+            android:orientation="vertical"
+            app:layout_constraintTop_toBottomOf="@+id/recyclerViewCategoryMenu">
 
-    </LinearLayout>
+            <TextView
+                android:id="@+id/textViewPromo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:text="Promo"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent" />
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/LinearLayoutMostPopular"
-        app:layout_constraintTop_toBottomOf="@+id/LinearLayoutPromo"
-        android:orientation="vertical"
-        >
+            <TextView
+                android:id="@+id/textViewDeskripsiPromo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:text="Ada Promo nih buat kamu"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textViewPromo" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Most Popular"
-            android:textStyle="bold"
-            android:textSize="20dp"
-            android:layout_marginStart="16dp"
-            android:id="@+id/textViewMostPopular"
-            />
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerPromo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10dp" />
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recyclerviewListMenu"
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/LinearLayoutMostPopular"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="10dp"
-            app:layout_constraintTop_toBottomOf="@+id/textViewMostPopular"
-            />
+            android:orientation="vertical"
+            app:layout_constraintTop_toBottomOf="@+id/LinearLayoutPromo">
 
-    </LinearLayout>
+            <TextView
+                android:id="@+id/textViewMostPopular"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:text="Most Popular"
+                android:textSize="20dp"
+                android:textStyle="bold" />
 
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerviewListMenu"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:nestedScrollingEnabled="false"
+                android:padding="10dp" />
 
+        </LinearLayout>
 
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.core.widget.NestedScrollView>

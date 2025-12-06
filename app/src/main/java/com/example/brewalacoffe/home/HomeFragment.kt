@@ -8,14 +8,16 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.brewalacoffe.FilterCategoryMenu
 import com.example.brewalacoffe.Menu
 import com.example.brewalacoffe.Promo
 import com.example.brewalacoffe.R
-import com.example.brewalacoffe.TypePromo
 
 class HomeFragment : Fragment() {
 
     private lateinit var getDataRecyclerView: GetDataRecyclerView
+    private lateinit var filterCategoryMenu: FilterCategoryMenu
+    private lateinit var menuAdapter: MenuAdapter
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -29,15 +31,29 @@ class HomeFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         getDataRecyclerView = GetDataRecyclerView()
+        filterCategoryMenu = FilterCategoryMenu(getDataRecyclerView)
 
+        // ambil data
+        val listPromo:List<Promo> = getDataRecyclerView.getDataListPromo()
+        val listMenu: MutableList<Menu> = getDataRecyclerView.getDataListMenu()
+        val masterListMenu: List<Menu> = getDataRecyclerView.getDataListMenu()
+        val listCategory:List<CategoryMenu> = getDataRecyclerView.getDataListCategory()
+
+        // tampilkan data ke recycler view product
         val recylerviewProduct = view.findViewById<RecyclerView>(R.id.recyclerviewListMenu)
-        recylerviewProduct.layoutManager = LinearLayoutManager(requireActivity())
+        menuAdapter = MenuAdapter(listMenu.toMutableList(), ::goToProduct)
+        recylerviewProduct.layoutManager = LinearLayoutManager(
+            requireActivity(),
+            LinearLayoutManager.VERTICAL,
+            false)
+        recylerviewProduct.adapter = menuAdapter
 
         val recylerViewPromo = view.findViewById<RecyclerView>(R.id.recyclerPromo)
         recylerViewPromo.layoutManager = LinearLayoutManager(
             requireActivity(),
             LinearLayoutManager.HORIZONTAL,
             false)
+        recylerViewPromo.adapter = PromoAdapter(listPromo)
 
         val recylerViewCategory = view.findViewById<RecyclerView>(R.id.recyclerViewCategoryMenu)
         recylerViewCategory.layoutManager = LinearLayoutManager(
@@ -46,16 +62,18 @@ class HomeFragment : Fragment() {
             false
         )
 
-        val listPromo:List<Promo> = getDataRecyclerView.getDataListPromo()
-        val listMenu:List<Menu> = getDataRecyclerView.getDataListMenu()
-        val listCategory:List<CategoryMenu> = getDataRecyclerView.get
-
-        recylerviewProduct.adapter = MenuAdapter(
-            listMenu,
-            ::goToProduct
-        )
-
-        recylerViewPromo.adapter = PromoAdapter(listPromo)
+        recylerViewCategory.adapter = CategoryAdapter(
+            listCategory
+            ){ selectedCategory ->
+                val filteredList = if(selectedCategory.name == "ALL"){
+                    masterListMenu
+                } else {
+                    filterCategoryMenu.filterCategoryMenu { menu: Menu ->
+                        menu.categoryMenu == selectedCategory
+                    }
+                }
+            menuAdapter.updateData(filteredList)
+        }
     }
 
     fun goToProduct(menu:Menu): Unit{
@@ -69,7 +87,6 @@ class HomeFragment : Fragment() {
         detailProductIntent.putExtra(NAME_PRODUCT, menu.nameMenu)
         detailProductIntent.putExtra(CATEGORY_PRODUCT, menu.categoryMenu)
         detailProductIntent.putExtra(DESCRIBE_PRODUCT, menu.describeMenu)
-
 
         startActivity(detailProductIntent)
 

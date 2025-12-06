@@ -7,9 +7,21 @@ import com.example.brewalacoffe.R
 import com.example.brewalacoffe.TypePromo
 
 class GetDataRecyclerView {
-    fun getDataListCategory(): List<Category>
+    fun getDataListCategory(): List<CategoryMenu>{
+        val listCategory = mutableListOf<CategoryMenu>()
 
-    fun getDataListMenu(): List<Menu>{
+        listCategory.add(CategoryMenu.ALL)
+        listCategory.add(CategoryMenu.EXPRESSO_BASED)
+        listCategory.add(CategoryMenu.COLD_CAFFE)
+        listCategory.add(CategoryMenu.FLAVORED)
+        listCategory.add(CategoryMenu.AMERICANO)
+        listCategory.add(CategoryMenu.CAPUCCINO)
+        listCategory.add(CategoryMenu.LATTE)
+
+        return listCategory
+    }
+
+    fun getDataListMenu(): MutableList<Menu>{
         val listMenu = mutableListOf<Menu>()
 
         listMenu.add(Menu(
