@@ -9,17 +9,55 @@
         android:id="@+id/homeFragment"
         android:name="com.example.brewalacoffe.home.HomeFragment"
         android:label="Home"
-        tools:layout="@layout/fragment_home"/>
+        tools:layout="@layout/fragment_home">
+        <action
+            android:id="@+id/action_homeFragment_to_orderList"
+            app:destination="@id/orderList" />
+    </fragment>
 
     <fragment
         android:id="@+id/orderList"
         android:name="com.example.brewalacoffe.home.ReviewOrder"
         android:label="fragment_order_list"
-        tools:layout="@layout/fragment_order_list" />
+        tools:layout="@layout/fragment_order_list" >
+        <action
+            android:id="@+id/action_orderList_to_payment"
+            app:destination="@id/payment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/payment"
+        android:name="com.example.brewalacoffe.home.MethodPayment"
+        android:label="fragment_method_payment"
+        tools:layout="@layout/fragment_method_payment" >
+        <action
+            android:id="@+id/action_payment_to_qrishPayment"
+            app:destination="@id/qrishPayment" />
+        <action
+            android:id="@+id/action_payment_to_virtualAccountFragment"
+            app:destination="@id/virtualAccountFragment" />
+    </fragment>
+
     <fragment
         android:id="@+id/profileFragment"
         android:name="com.example.brewalacoffe.home.ProfileFragment"
         android:label="fragment_profile"
         tools:layout="@layout/fragment_profile" />
+
+    <fragment
+        android:id="@+id/qrishPayment"
+        android:name="com.example.brewalacoffe.home.QrisPaymentFragment"
+        android:label="fragment_qris_payment"
+        tools:layout="@layout/fragment_qris_payment" />
+
+    <fragment
+        android:id="@+id/virtualAccountFragment"
+        android:name="com.example.brewalacoffe.home.VirtualAccount"
+        android:label="virtual_account"
+        tools:layout="@layout/virtual_account" >
+        <action
+            android:id="@+id/action_virtualAccountFragment_to_homeFragment2"
+            app:destination="@id/homeFragment" />
+    </fragment>
 
 </navigation>

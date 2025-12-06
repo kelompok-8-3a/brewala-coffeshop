@@ -16,7 +16,7 @@ class ReviewOrder : Fragment() {
 
     private var coffeeName: String? = null
     private var coffeeType: String? = null
-    private var price: Double = 0.0
+    private var price: Int? = 0
     private var size: String? = null
     private var quantity: Int = 2
     private var rating: Double = 0.0
@@ -32,7 +32,7 @@ class ReviewOrder : Fragment() {
         // Ambil data dari fragment sebelumnya (Bundle)
         coffeeName = arguments?.getString("name") ?: "Cappuccino"
         coffeeType = arguments?.getString("type") ?: "With Oat Milk"
-        price = arguments?.getDouble("price") ?: 3.80
+        price = arguments?.getInt("price") ?: 30
         size = arguments?.getString("size") ?: "S"
         quantity = arguments?.getInt("qty") ?: 2
         rating = arguments?.getDouble("rating") ?: 4.5
@@ -45,9 +45,6 @@ class ReviewOrder : Fragment() {
 
     private fun setupUI(view: View) {
 
-        // ==========================
-        // 🔎 FIND VIEW BY ID SESUAI XML
-        // ==========================
 
         val btnBack = view.findViewById<ImageButton>(R.id.btnBack)
 
@@ -68,72 +65,70 @@ class ReviewOrder : Fragment() {
         val bottomTotal = view.findViewById<TextView>(R.id.bottomTotal)
         val buyButton = view.findViewById<LinearLayout>(R.id.bottomBar).getChildAt(1)
 
-
-        // ==========================
-        // 🖼 SET DATA PRODUK
-        // ==========================
+        // set data produk
 
         imgCoffee.setImageResource(imageRes)
         txtTitle.text = coffeeName
         txtSubtitle.text = coffeeType
         txtRating.text = rating.toString()
-        txtPrice.text = "$" + String.format("%.2f", price)
+        txtPrice.text = "Rp. " + price
         txtSizeValue.text = size
         txtCount.text = quantity.toString()
 
+// ongkir
+        val shippingCost = 2000
+        var total = (price ?: 0) * quantity
+        var grandtotal = total + shippingCost
 
-        // ==========================
-        // 💵 PERHITUNGAN TOTAL
-        // ==========================
+        txtTotalPrice.text = "Rp. " + total
+        txtShipping.text = "Rp."+ shippingCost
+        bottomTotal.text = "Total\nRp. " + grandtotal
 
-        val shippingCost = 20.00
-        var total = price * quantity
-        txtTotalPrice.text = "$" + String.format("%.2f", total)
-        txtShipping.text = "$20.00"
-        bottomTotal.text = "Total\n$" + String.format("%.2f", total)
-
-
-        // ==========================
-        // ➕➖ LOGIKA PLUS – MINUS
-        // ==========================
-
+// tombol +
         btnPlus.setOnClickListener {
             quantity++
             txtCount.text = quantity.toString()
 
-            total = price * quantity
-            txtTotalPrice.text = "$" + String.format("%.2f", total)
-            bottomTotal.text = "Total\n$" + String.format("%.2f", total)
+            total = (price ?: 0) * quantity
+            grandtotal = total + shippingCost
+            txtTotalPrice.text = "Rp. " + total
+            bottomTotal.text = "Total\nRp. " + grandtotal
         }
 
+// tombol -
         btnMinus.setOnClickListener {
             if (quantity > 1) {
                 quantity--
                 txtCount.text = quantity.toString()
 
-                total = price * quantity
-                txtTotalPrice.text = "$" + String.format("%.2f", total)
-                bottomTotal.text = "Total\n$" + String.format("%.2f", total)
+                total = (price ?: 0) * quantity
+                grandtotal = total + shippingCost
+                txtTotalPrice.text = "Rp. " + total
+                bottomTotal.text = "Total\nRp. " + grandtotal
             }
         }
 
 
-        // ==========================
-        // 🔙 BACK BUTTON
-        // ==========================
+
+        // button back
 
         btnBack.setOnClickListener {
             requireActivity().onBackPressedDispatcher.onBackPressed()
         }
 
 
-        // ==========================
-        // 🛒 BUY BUTTON
-        // ==========================
+        // button buy
 
         buyButton.setOnClickListener {
-            Toast.makeText(requireContext(), "Order Berhasil!", Toast.LENGTH_SHORT).show()
+            val bundle = Bundle().apply {
+                putInt("grandtotal", grandtotal)
+//                putInt("price", menu.priceMenu)
+//                putInt("image", menu.imageMenu)
+            }
+            androidx.navigation.Navigation.findNavController(requireView())
+                .navigate(R.id.action_orderList_to_payment, bundle)
         }
+
     }
 }
 

@@ -7,8 +7,13 @@ import android.view.ViewGroup
 import android.widget.ImageButton
 import android.widget.ImageView
 import android.widget.TextView
+import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.example.brewalacoffe.Menu
+import android.content.Intent
+import android.os.Bundle
+import androidx.navigation.Navigation
+
 
 class MenuAdapter(
     val listMenu: MutableList<Menu>,
@@ -42,10 +47,21 @@ class MenuAdapter(
         holder.textViewPriceMenu.text = "Rp. " + menu.priceMenu.toString()
         holder.imageViewMenu.setImageResource(menu.imageMenu)
         holder.ImageButtonMenu.visibility = View.VISIBLE
-//        holder.ImageButtonMenu.setOnClickListener {
-//            listMenu.removeAt(position)
-//            notifyItemRemoved(position)
-//        }
+        holder.ImageButtonMenu.setOnClickListener {
+            Toast.makeText(
+                holder.itemView.context,
+                "${menu.nameMenu} ditambahkan",
+                Toast.LENGTH_SHORT
+            ).show()
+            val bundle = Bundle().apply {
+                putString("name", menu.nameMenu)
+                putInt("price", menu.priceMenu)
+                putInt("image", menu.imageMenu)
+            }
+
+            Navigation.findNavController(holder.itemView)
+                .navigate(R.id.action_homeFragment_to_orderList, bundle)
+        }
     }
 
     fun updateData(newList: List<Menu>){

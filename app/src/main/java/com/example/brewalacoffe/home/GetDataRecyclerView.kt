@@ -44,12 +44,201 @@ class GetDataRecyclerView {
             "",
             15000,
             CategoryMenu.COLD_CAFFE))
-        listMenu.add(Menu(
-            R.drawable.item_menu_caramel_latte,
-            "Caramel Latte",
-            "",
-            22000,
-            CategoryMenu.FLAVORED))
+
+        listMenu.add(
+            Menu(
+                R.drawable.item_menu_mocha,
+                "Iced Mocha",
+                "Kombinasi espresso, cokelat, dan susu disajikan dengan es.",
+                23000,
+                CategoryMenu.COLD_CAFFE
+            )
+        )
+
+        listMenu.add(
+            Menu(
+                R.drawable.item_menu_capuccino,
+                "Iced Cappuccino",
+                "Cappuccino versi dingin dengan rasa creamy dan segar.",
+                22000,
+                CategoryMenu.CAPUCCINO
+            )
+        )
+
+        // =======================
+        // LATTE CATEGORY
+        // =======================
+        listMenu.add(
+            Menu(
+                R.drawable.item_menu_caffe_latte,
+                "Caffe Latte",
+                "Espresso creamy dengan steamed milk lembut.",
+                18000,
+                CategoryMenu.LATTE
+            )
+        )
+
+        listMenu.add(
+            Menu(
+                R.drawable.item_menu_matcha_latte,
+                "Matcha Latte",
+                "Teh matcha premium dengan susu, rasa earthy dan creamy.",
+                25000,
+                CategoryMenu.LATTE
+            )
+        )
+
+        listMenu.add(
+            Menu(
+                R.drawable.item_menu_vanilla_latte,
+                "Vanilla Latte",
+                "Latte lembut dengan sirup vanila manis dan aromatik.",
+                23000,
+                CategoryMenu.LATTE
+            )
+        )
+
+        // =======================
+        // AMERICANO CATEGORY
+        // =======================
+        listMenu.add(
+            Menu(
+                R.drawable.item_menu_americano,
+                "Americano",
+                "Espresso dengan tambahan air panas, rasa ringan dan bold.",
+                15000,
+                CategoryMenu.AMERICANO
+            )
+        )
+
+        listMenu.add(
+            Menu(
+                R.drawable.item_menu_ice_americano,
+                "Iced Americano",
+                "Americano versi dingin, lebih segar dan ringan.",
+                16000,
+                CategoryMenu.AMERICANO
+            )
+        )
+
+        listMenu.add(
+            Menu(
+                R.drawable.item_menu_long_black,
+                "Long Black",
+                "Mirip Americano namun espresso dituangkan ke air panas.",
+                17000,
+                CategoryMenu.AMERICANO
+            )
+        )
+
+        // =======================
+        // EXPRESSO BASED
+        // =======================
+        listMenu.add(
+            Menu(
+                R.drawable.item_menu_espresso,
+                "Single Espresso",
+                "Kopi hitam pekat dan strong.",
+                12000,
+                CategoryMenu.EXPRESSO_BASED
+            )
+        )
+
+        listMenu.add(
+            Menu(
+                R.drawable.item_menu_double_espresso,
+                "Double Espresso",
+                "Dua shot espresso untuk energi ekstra.",
+                15000,
+                CategoryMenu.EXPRESSO_BASED
+            )
+        )
+
+        listMenu.add(
+            Menu(
+                R.drawable.item_menu_macchiato,
+                "Espresso Macchiato",
+                "Espresso dengan sedikit foam susu.",
+                17000,
+                CategoryMenu.EXPRESSO_BASED
+            )
+        )
+
+        // =======================
+        // COLD CAFFE
+        // =======================
+        listMenu.add(
+            Menu(
+                R.drawable.item_menu_cold_brew,
+                "Cold Brew",
+                "Kopi diseduh dingin selama 12 jam, rasa smooth dan tidak asam.",
+                25000,
+                CategoryMenu.COLD_CAFFE
+            )
+        )
+
+        listMenu.add(
+            Menu(
+                R.drawable.item_menu_caffe_latte,
+                "Iced Latte",
+                "Latte dingin lembut dengan es.",
+                20000,
+                CategoryMenu.COLD_CAFFE
+            )
+        )
+
+        listMenu.add(
+            Menu(
+                R.drawable.item_menu_ice_mocha,
+                "Iced Mocha",
+                "Perpaduan espresso, cokelat, dan susu.",
+                23000,
+                CategoryMenu.COLD_CAFFE
+            )
+        )
+
+        // =======================
+        // FLAVORED COFFEE
+        // =======================
+        listMenu.add(
+            Menu(
+                R.drawable.item_menu_caramel_latte,
+                "Caramel Latte",
+                "Latte susu creamy dengan sirup karamel.",
+                22000,
+                CategoryMenu.FLAVORED
+            )
+        )
+
+        listMenu.add(
+            Menu(
+                R.drawable.item_menu_hazelnut_latte,
+                "Hazelnut Latte",
+                "Latte dengan sirup hazelnut manis dan wangi.",
+                24000,
+                CategoryMenu.FLAVORED
+            )
+        )
+
+        listMenu.add(
+            Menu(
+                R.drawable.item_menu_mocha,
+                "Mocha Hot",
+                "Cokelat panas dengan campuran espresso.",
+                25000,
+                CategoryMenu.FLAVORED
+            )
+        )
+
+        listMenu.add(
+            Menu(
+                R.drawable.item_menu_vanilla_latte,
+                "Salted Caramel Coffee",
+                "Kopi flavored dengan karamel asin manis.",
+                26000,
+                CategoryMenu.FLAVORED
+            )
+        )
 
         return listMenu
     }
