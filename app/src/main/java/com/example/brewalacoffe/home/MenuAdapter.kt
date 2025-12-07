@@ -42,10 +42,6 @@ class MenuAdapter(
         holder.textViewPriceMenu.text = "Rp. " + menu.priceMenu.toString()
         holder.imageViewMenu.setImageResource(menu.imageMenu)
         holder.ImageButtonMenu.visibility = View.VISIBLE
-//        holder.ImageButtonMenu.setOnClickListener {
-//            listMenu.removeAt(position)
-//            notifyItemRemoved(position)
-//        }
     }
 
     fun updateData(newList: List<Menu>){

@@ -12,10 +12,10 @@
         tools:layout="@layout/fragment_home"/>
 
     <fragment
-        android:id="@+id/orderList"
+        android:id="@+id/reviewOrderFragment"
         android:name="com.example.brewalacoffe.home.ReviewOrder"
-        android:label="fragment_order_list"
-        tools:layout="@layout/fragment_order_list" />
+        android:label="fragment_review_order"
+        tools:layout="@layout/fragment_review_order" />
     <fragment
         android:id="@+id/profileFragment"
         android:name="com.example.brewalacoffe.home.ProfileFragment"
