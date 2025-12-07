@@ -38,7 +38,7 @@
         android:id="@+id/virtualAccountFragment"
         android:name="com.example.brewalacoffe.home.VirtualAccountFragment"
         android:label="Virtual Account"
-        tools:layout="@layout/fragment_virtual_account">
+        tools:layout="@layout/virtual_account">
 
         <action
             android:id="@+id/action_va_to_review"

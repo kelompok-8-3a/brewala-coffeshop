@@ -1,5 +1,6 @@
 package com.example.brewalacoffe.login
 
+import android.app.ProgressDialog.show
 import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -9,11 +10,14 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
+import android.widget.Toast.makeText
 import androidx.fragment.app.Fragment
 import com.example.brewalacoffe.home.MainActivity
 import com.example.brewalacoffe.R
+import com.example.brewalacoffe.utils.SessionManager
 
 class LoginFragment : Fragment() {
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -24,6 +28,7 @@ class LoginFragment : Fragment() {
             R.layout.fragment_login,
             container,
             false)
+
         return view
     }
 
@@ -43,19 +48,24 @@ class LoginFragment : Fragment() {
         }
 
         buttonLogin.setOnClickListener {
-            val intentToHomeActivity = Intent(
+           val intentToHomeActivity = Intent(
                 requireActivity(),
                 MainActivity::class.java
             )
 
-            val usernameString = username.text.toString()
+           val usernameString = username.text.toString()
             val passwordString = password.text.toString()
 
 
             if (usernameString == "" && passwordString == "") {
-                Toast.
-                makeText(
-                    activity,
+
+               val session = SessionManager(requireContext())
+               session.setLoginStatus(true) //tambahan
+
+
+               Toast.
+              makeText(
+                   activity,
                     "Login berhasil",
                     Toast.LENGTH_SHORT)
                     .show()
