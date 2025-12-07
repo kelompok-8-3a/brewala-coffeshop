@@ -1,5 +1,6 @@
 package com.example.brewalacoffe.home
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -9,6 +10,8 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import com.example.brewalacoffe.R
+import com.example.brewalacoffe.login.LoginActivity
+import com.example.brewalacoffe.utils.SessionManager
 
 class ProfileFragment : Fragment() {
 
@@ -50,8 +53,16 @@ class ProfileFragment : Fragment() {
             Toast.makeText(requireContext(), "Setting diklik", Toast.LENGTH_SHORT).show()
         }
 
-        btnLogout.setOnClickListener {
+        btnLogout.setOnClickListener { //tambahan
+
+            val session = SessionManager(requireContext())
+            session.logout()
+
             Toast.makeText(requireContext(), "Logout berhasil", Toast.LENGTH_SHORT).show()
+
+            val intent = Intent(requireContext(), LoginActivity::class.java)
+            intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+            startActivity(intent)
         }
     }
 }

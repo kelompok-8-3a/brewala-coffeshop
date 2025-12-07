@@ -1,5 +1,6 @@
 package com.example.brewalacoffe.home
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -9,6 +10,8 @@ import androidx.navigation.findNavController
 import androidx.navigation.ui.setupWithNavController
 import com.example.brewalacoffe.Menu
 import com.example.brewalacoffe.R
+import com.example.brewalacoffe.login.LoginActivity
+import com.example.brewalacoffe.utils.SessionManager
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
 
